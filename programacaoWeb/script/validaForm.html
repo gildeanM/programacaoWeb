@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Validar formulário com JS</title>
+    <style>
+        div{
+            width: 150px;
+            height: 15px;
+            border: 1px solid black;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body onkeypress="teclaEnter()">
+    <section>
+    <form>
+        <p>Nome: <input type="text" id="nome"></p>
+        <p>Senha: <input type="password" id="senha"></p>
+        <button id="SENHA" onclick="verSenha()">Ver senha</button>
+        <button type="button" onclick="valid()">login</button>
+        <hr>
+        <p>Nome:<input type="text" id="getName" readonly></p>
+        <p>Senha:<input type="text" id="getPass" readonly></p>
+    </form>
+    <hr>    
+    </section>
+    <section>
+        Nome:<div id="val01">
+            
+        </div>
+        Senha:<div id="val02">
+
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div id="text01">EEEP Amélia</div>
+        <div id="text02">A melhor</div>
+        <p id="text03">A dona aranha subiu pela parede</p>
+        <button type="button" onclick="getText()">Obter texto</button>
+        <button id="button" type="button" onclick="mudar()">Continue</button>
+        <p id="aaa"></p>
+    </section>
+    <script>
+        function teclaEnter(){
+            if(window.event.keyCode == 13){
+                let nome = document.getElementById("nome").value;
+                let senha = document.getElementById("senha").value;
+
+                document.getElementById("val01").innerHTML = nome;
+                document.getElementById("val02").innerHTML = senha;
+            }
+        }
+        function valid(){
+            let nome = document.getElementById("nome").value;
+            let senha = document.getElementById("senha").value;
+            
+            document.getElementById("getName").value = nome;
+            document.getElementById("getPass").value = senha;
+            //alert("Seu nome é "+ nome);
+            //alert("Sua senha é "+ senha);
+            //console.log("Seu nome é "+ nome);
+            //console.log("Sua senha é "+ senha);
+
+        } 
+        function getText(){
+            alert(document.getElementById("text01").innerText);//É possivel adquirir vlores tanto com o innerText quanto com o innerHTML, que também possui a função de colocar um texto
+            alert(document.getElementById("text02").innerText);
+        }
+        function mudar(){
+            let c;
+            let b = document.getElementById("text03").innerHTML;
+            let a = 1;
+            
+            if(a == 1){
+            onclick=mudar();
+            function mudar(){
+                document.getElementById("text03").innerHTML = "veio a chuva forte e a derrubou...";
+                document.getElementById("button").innerHTML = "Voltar";
+                a = 0;
+            }
+            }
+            
+            if(a == 0){
+                onclick=mudar();
+                function mudar(){
+                document.getElementById("text03").innerHTML = b;
+                document.getElementById("button").innerHTML = "Continue";
+            }   
+            }
+            
+            
+        }
+        
+    </script>
+    
+</body>
+</html>

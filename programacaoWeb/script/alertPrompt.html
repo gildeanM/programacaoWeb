@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Alert</title>
+    <style>
+        #bloco{
+            height: 100px;
+            width: 100px;
+            border: 1px solid blue;
+            
+            
+        }
+    </style>
+</head>
+<body onkeypress="addStyle()">
+    <header>
+
+    </header>
+    <section >
+        
+        <button type="button" onclick="mensagem()">Show</button>
+        <button type="button" onclick="obterDado()">Get</button>
+        <div  onmousemove="mudarFundo()" id="content" style="background-color:chocolate; width: 200px; height: 160px;"></div>
+        <div id="bloco">conteúdo</div>
+            <script> 
+                function mensagem(){
+                    alert("Hello word, aqui é 2°I-é claro, de informática");
+                }
+                function obterDado(){
+                    dado = window.prompt("Digite um dado");
+                   
+                    alert(dado);
+                    //console.log(dado);
+                    
+                }
+                function mudarFundo(){
+                    document.getElementById("content").style.backgroundColor = "blue";
+                }
+                function addStyle(){
+                   let element = document.getElementById("bloco");
+                   element.style.cssText = 'border-radius: 50px;'
+                   + 'color:blue;'
+                   + 'backgroundColor: black;';
+                }
+                 
+            </script>
+    </section>
+    <footer >
+       
+    </footer>
+</body>
+</html>
